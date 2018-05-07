@@ -1,22 +1,26 @@
 <%= provide(:title, "Create New Post") %>
 
-Create New Post
+<div class="post-title five-space center">
+  Create New Post
+</div>
 
-<%= form_for(@post, url: category_posts_path) do |f| %>
-  <%= render 'partials/post_errors' %>
-  <div class="field">
-    <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
-  </div>
-  <div class="field">
-    <%= f.text_area :description, placeholder: "Description", class: "text-area" %>
-  </div>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Content", class: "text-area" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Create Post", class: "first-post" %>
-  </div>
-<% end %>
+<div class="form-container">
+  <%= form_for(@post, url: category_posts_path) do |f| %>
+    <%= render 'partials/post_errors' %>
+    <div class="field">
+      <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :description, placeholder: "Description", class: "text-area" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "Content", class: "text-area" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Create Post", class: "submit-button" %>
+    </div>
+  <% end %>
+</div>

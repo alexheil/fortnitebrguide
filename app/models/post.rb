@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  belongs_to :categories
+  belongs_to :category
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :description, length: { maximum: 500 }, allow_blank: true
