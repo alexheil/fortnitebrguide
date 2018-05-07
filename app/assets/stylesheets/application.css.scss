@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$main: #66d0ff;
+$dark: #D65940;
+$light: #E8B922;
+$black: #181C1C;
+$white: #FAF8F8;
+$fancy-font: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+@mixin transition {
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.75em;
+  font-family: $fancy-font;
+  font-weight: 300;
+  color: $black;
+  background: $white;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  @include transition;
+  color: $main;
+  text-decoration: none;
+  &:hover {
+    color: $dark;
+  }
+}
+
+::selection {
+  color: #fff;
+  background: $main;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: $main;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+/* *************** SIZES ***************** */
+
+.post-title {
+  font-size: 2em;
+  line-height: 1.15em;
+}
+
+.five-space {
+  margin: 5vh 0;
+}
+
+/* ******************* FORMS ****************** */
+
+.form-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@mixin fields {
+  width: 100%;
+  font-size: 1.25em;
+  font-weight: 100;
+  border-bottom: 1px solid $black;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  display: inline-block;
+  box-sizing: border-box;
+    &:focus {
+    border: 1px solid $black;
+  }
+}
+
+.text-field {
+  @include fields;
+  padding: 1vh 1vw;
+  background: $white;
+}
+
+.text-area {
+  @include fields;
+  min-width: 100%;
+  max-width: 100%;
+  height: 30vh;
+  padding: 1vh 1vw;
+  background: $white;
+}
+
+@mixin buttons {
+  @include transition;
+  display: inline-block;
+  padding: 1vh 1vw;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 300;
+  background-color: $light;
+  cursor: pointer;
+  box-sizing: border-box;
+  color: $black;
+  &:hover {
+    color: $white;
+  }
+}
+
+.submit-button {
+  @include buttons;
+  width: 100%;
+  border: 2px solid $light;
+  &:hover {
+    background-color: $light;
+  }
+}
+
+
+/* ****************** HEADER // FOOTER ************** */
+
+.nav-links {
+  color: $main;
+  &:hover {
+    color: $dark;
+  }
+}
+
+.full-footer-container {
+  width: 100%;
+  clear: both;
+  margin-top: 5vh;
+  padding: 2vh 0;
+}
+
+.footer {
+  width: 100%;
+  display: inline-block;
+  span {
+    float: left;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    float: right;
+    li {
+      position: relative;
+      display: inline-block;
+      margin: 0 1vw;
+      &:first-child {
+        margin: 0 1vw 0 0;
+      }
+    }
+  }
+}
+
+.footer-disclaimer {
+  font-size: .75em;
+  text-align: center;
+}
+
