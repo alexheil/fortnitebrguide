@@ -144,6 +144,8 @@ a {
   cursor: pointer;
   box-sizing: border-box;
   color: $black;
+  clip-path: polygon(0 0,100% 10%,100% 90%,0 100%);
+  box-shadow: 0 4px 12px -4px rgba(0,0,0,.5);
   &:hover {
     color: $white;
   }
