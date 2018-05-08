@@ -21,7 +21,13 @@ $black: #181C1C;
 $white: #FAF8F8;
 $grey: #b1b1b1;
 $light-grey: #e1e1e1;
-$fancy-font: Helvetica Neue, Helvetica, Arial, sans-serif;
+$font: Helvetica Neue, Helvetica, Arial, sans-serif;
+$title: "BurbankBigCondensed-Black", Helvetica Neue, Helvetica, Arial, sans-serif;
+
+@font-face {
+  font-family: "BurbankBigCondensed-Black";
+  src:url(asset-path('fonts/BurbankBigCondensed-Black.otf'));
+}
 
 @mixin transition {
   -webkit-transition: .3s;
@@ -39,7 +45,7 @@ body {
   margin: 0;
   font-size: 20px;
   line-height: 1.75em;
-  font-family: $fancy-font;
+  font-family: $font;
   letter-spacing: .5px;
   font-weight: 300;
   color: $black;
@@ -83,6 +89,10 @@ img {
   margin: 0 auto;
 }
 
+.clip {
+  clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
+}
+
 .container {
   width: 96%;
   margin: 0 auto;
@@ -102,6 +112,10 @@ img {
 
 .black-link {
   color: $black;
+}
+
+.title {
+  font-family: $title;
 }
 
 /* *************** FLASH AND ERRORS *************** */
@@ -135,7 +149,7 @@ img {
   width: 90%;
   margin: 0 auto;
   padding: 1vh 0;
-  font-family: $fancy-font
+  font-family: $font
 }
 
 #error_explanation {
@@ -153,10 +167,14 @@ img {
 /* **************** AREAS *************** */
 
 .header-text {
-  padding: 45vh 5% 5vh 5%;
+  padding: 45vh 5% 6vh 5%;
   font-size: 5em;
   color: #fff;
   background: rgba(0,0,0,0.5);
+}
+
+.rotate {
+  transform: rotate(-2deg);
 }
 
 .header-image {
@@ -311,6 +329,10 @@ img {
   border-radius: 4px 4px 0 0;
 }
 
+.image-clip {
+  clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%);
+}
+
 /* *************** SIZES ***************** */
 
 .post-title {
@@ -352,7 +374,7 @@ input:-webkit-autofill {
 
 input[type="submit"] {
   font-weight: 200;
-  font-family: $fancy-font;
+  font-family: $font;
 }
 
 input[type=checkbox] {
@@ -382,7 +404,7 @@ label {
   font-size: 1em;
   font-weight: 200;
   letter-spacing: .5px;
-  font-family: $fancy-font;
+  font-family: $font;
   border-bottom: 1px solid $black;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
@@ -426,7 +448,7 @@ label {
   cursor: pointer;
   box-sizing: border-box;
   color: $black;
-  clip-path: polygon(0 0,100% 10%,100% 90%,0 100%);
+  clip-path: polygon(0 0, 100% 10%,100% 90%, 0 100%);
   &:hover {
     background-color: #DDAD15;
     color: $black;
@@ -436,6 +458,7 @@ label {
 .submit-button {
   @include buttons;
   width: 100%;
+  font-family: $title;
 }
 
 

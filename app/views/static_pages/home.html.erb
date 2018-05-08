@@ -1,10 +1,13 @@
-<div class="wrapper">
+<div class="wrapper clip">
   <div style="background: url(https://i.imgur.com/6VvV1L3.jpg) no-repeat fixed; background-size: 100%;" class="header-image">
-    <div class="header-text">
-      Fortnite BR Guide
+    <div class="header-text title">
+      <div class="rotate">
+        FORTNITE BR GUIDE
+      </div>
     </div>
   </div>
 </div>
+
 
 <div class="wrapper">
   <div class="container">
@@ -36,7 +39,7 @@
             </div>
           </div>
         <% end %>
-        VIEW ALL POSTS
+        <%= link_to "View All Posts", posts_path %>
       </main>
 
       <%= render 'partials/sidebar' %>

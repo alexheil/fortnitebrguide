@@ -1,9 +1,11 @@
 <%= provide(:title, sanitize(@category.title)) %>
 
-<div class="wrapper">
+<div class="wrapper clip">
   <div style="background: url(<%= @category.image %>) no-repeat fixed; background-size: 100%;" class="header-image">
-    <div class="header-text">
-      <%= @category.title %>
+    <div class="header-text title">
+      <div class="rotate">
+        <%= @category.title.upcase %>
+      </div>
     </div>
   </div>
 </div>

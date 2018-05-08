@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_admin!, except: [:show, :index]
+  before_action :set_email, only: [:index, :show]
 
   def index
     @posts = Post.all
@@ -57,8 +58,12 @@ class PostsController < ApplicationController
 
   private
 
+    def set_email
+      @email = Email.new
+    end
+
     def post_params
-      params.require(:post).permit(:title, :description, :image, :content)
+      params.require(:post).permit(:title, :description, :image, :content, :daily)
     end
 
 end

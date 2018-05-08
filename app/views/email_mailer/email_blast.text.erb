@@ -1,0 +1,13 @@
+<div class="container">
+
+  <h1><%= link_to @post.title, category_post_url(@post.category, @post) %></h1>
+
+  <img src="<%= @post.image %>" width="100%" height="auto" />
+
+  <p><%= @post.description %></p>
+
+  <%= link_to "Check it out!", category_post_url(@post.category, @post), class: "submit-button" %>
+
+</div>
+
+<p class="mini-text"><%= link_to "Unsubscribe", unsubscribe_email_url(@email) %></p>

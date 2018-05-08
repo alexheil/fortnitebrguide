@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
   before_action :authenticate_admin!, except: [:index, :show]
+  before_action :set_email, only: [:index, :show]
 
   def index
     @categories = Category.all
@@ -51,6 +52,10 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+    def set_email
+      @email = Email.new
+    end
 
     def category_params
       params.require(:category).permit(:title, :description, :image)

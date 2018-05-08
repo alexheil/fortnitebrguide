@@ -9,7 +9,7 @@ class Email < ApplicationRecord
   end
 
   def self.email_blast
-    Email.where().find_each do |email|
+    Email.where(daily: true).find_each do |email|
       EmailMailer.daily_blast(email).deliver_now
     end
   end
