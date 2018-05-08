@@ -1,0 +1,23 @@
+<%= provide(:title, "Edit " + sanitize(@category.title)) %>
+
+<div class="post-title five-space center">
+  Edit <%= @category.title %>
+</div>
+
+<div class="form-container">
+  <%= form_for(@category, url: category_path) do |f| %>
+    <%= render 'partials/category_errors' %>
+    <div class="field">
+      <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :description, placeholder: "Description", class: "text-area" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Edit Category", class: "submit-button" %>
+    </div>
+  <% end %>
+</div>

@@ -3,6 +3,8 @@ class Category < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  default_scope -> { order('categories.title ASC') }
+  
   has_many :posts, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 255 }

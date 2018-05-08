@@ -7,8 +7,18 @@ Rails.application.routes.draw do
     get "sign_out", to: "admins/sessions#destroy"
   end
 
-  resources :categories, path: "" do
-    resources :posts, path: "", except: :index
+  get ':id/edit' => 'categories#edit', :as => 'edit_category'
+  get 'categories' => 'categories#index', :as => 'categories'
+  get 'posts' => 'posts#index', :as => 'posts'
+
+  resources :categories, except: [:edit, :index], path: "/" do
+    resources :posts, path: "/", except: :index
+  end
+
+  resources :emails, only: [:create, :destroy] do 
+    member do
+      get :unsubscribe
+    end
   end
 
 end

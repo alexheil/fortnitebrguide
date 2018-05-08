@@ -1,0 +1,47 @@
+<%= provide(:title, "Categories") %>
+
+<div class="wrapper">
+  <div style="background: url(https://i.imgur.com/6VvV1L3.jpg) no-repeat fixed; background-size: 100%;" class="header-image">
+    <div class="header-text">
+      Categories
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="flex">
+
+      <main class="content">
+        <% @categories.each do |category| %>
+          <div class="content-container">
+            <div class="one-column">
+              <%= link_to(category_path(category)) do %>
+                <img class="thumbnail-image" srcset="<%= category.image %>" width="100%" height="auto" />
+              <% end %>
+            </div>
+            <div class="second-column">
+              <div class="padding-horizontal">
+                <%= link_to category.title, category_path(category), class: "category-list-text" %>
+              </div>
+              <div class="post-list-title padding-horizontal">
+                <%= link_to category.title, category_path(category) %>
+              </div>
+              <div class="description-text">
+                <%= category.description %>
+              </div>
+              <div class="bottom">
+                <div class="padding-vertical padding-horizontal">
+                  <%= link_to "See Posts...", category_path(category), class: "submit-button" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </main>
+
+      <%= render 'partials/sidebar' %>
+
+    </div>
+  </div>
+</div>

@@ -2,6 +2,9 @@ class Post < ApplicationRecord
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+  excluded_words = ["edit", "new"]
+
+  default_scope -> { order('id DESC') }
 
   belongs_to :category
 
