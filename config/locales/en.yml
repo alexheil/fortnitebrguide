@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      email:
+        email: ""
+  errors:
+    models:
+      email:
+    attributes:
+      email:
+        blank: "Forgetting your email?"
+        taken: "You're already on the list!"
+        invalid: "That's definitely not an email."
+        too_long: "Your email is too long. Keep it under 75 characters."

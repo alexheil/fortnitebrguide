@@ -6,7 +6,7 @@
 
 <div class="form-container">
   <%= form_for(@post, url: category_posts_path) do |f| %>
-    <%= render 'partials/post_errors' %>
+    <%= render 'partials/errors/post_errors' %>
     <div class="field">
       <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
     </div>

@@ -4,32 +4,14 @@
     <div class="margin-fix">
       <div class="padding-horizontal">
         <div class="padding-vertical border-bottom">
-          <%= link_to "Fortnite BR Guide", root_url, class: "black-link" %>
+          <%= link_to "Fortnite BR Guide", root_url, class: "submit-button" %>
         </div>
         
 
         <div class="padding-vertical">
-          Get notified by email!
-          <div class="one-space-top">
-            <%= form_for(Email.new, url: emails_path) do |f| %>
-              <div>
-                <%= f.email_field :email, placeholder: "Enter your email", class: "text-field-white" %>
-              </div>
-              <div class="one-space-top flex">
-                <div class="two-column">
-                  <%= f.check_box :daily %>
-                  <%= f.label :daily %>
-                </div>
-                <div class="two-column">
-                  <%= f.check_box :article %>
-                  <%= f.label :article, "Per Article" %>
-                </div>
-              </div>
-              <div class="one-space-top">
-                <%= f.submit "Sign up", class: "submit-button" %>
-              </div>
-            <% end %>
-          </div>
+
+          <span class="email_form"><%= render 'partials/emails/email_form' %></span>
+
         </div>
 
 

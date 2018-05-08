@@ -9,14 +9,18 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'partials/twitter_cards' %>
     <%= render 'partials/shim' %>
     <%= render 'partials/analytics' %>
   </head>
 
   <body>
-    <%= render 'partials/header' %>
+
+    <div class="flash_js">
+      <%= render 'partials/flash' %>
+    </div>
+    
     <%= yield %>
     <%= render 'partials/footer' %>
   </body>

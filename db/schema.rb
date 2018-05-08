@@ -40,10 +40,9 @@ ActiveRecord::Schema.define(version: 20180507025601) do
 
   create_table "emails", force: :cascade do |t|
     t.string   "email"
-    t.boolean  "daily"
-    t.boolean  "article"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "daily",      default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "posts", force: :cascade do |t|

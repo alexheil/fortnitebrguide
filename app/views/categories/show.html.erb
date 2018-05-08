@@ -28,7 +28,7 @@
             </div>
             <div class="second-column">
               <div class="padding-horizontal">
-                <%= link_to post.category.title, category_path(post.category), class: "category-list-text" %>
+                <%= link_to post.category.title, category_path(post.category), class: "tiny-text" %>
               </div>
               <div class="post-list-title padding-horizontal">
                 <%= link_to post.title, category_post_path(post.category.slug, post) %>
