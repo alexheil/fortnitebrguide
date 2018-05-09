@@ -46,7 +46,7 @@ body {
   font-size: 20px;
   line-height: 1.75em;
   font-family: $font;
-  letter-spacing: .5px;
+  letter-spacing: .75px;
   font-weight: 300;
   color: $black;
   background: $white;
@@ -83,14 +83,14 @@ img {
   background: $main;
 }
 
+.mobile-only {
+  display: none;
+}
+
 .wrapper {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-}
-
-.clip {
-  clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
 }
 
 .container {
@@ -116,6 +116,10 @@ img {
 
 .title {
   font-family: $title;
+}
+
+.clip {
+  clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
 }
 
 /* *************** FLASH AND ERRORS *************** */
@@ -165,6 +169,11 @@ img {
 }
 
 /* **************** AREAS *************** */
+
+.site-title {
+  margin-top: 5vh;
+  font-size: 3em;
+}
 
 .header-text {
   padding: 45vh 5% 6vh 5%;
@@ -288,9 +297,12 @@ img {
 
 .two-column {
   margin: 0 auto;
-  width: 50%;
+  width: 48%;
   display: inline-block;
   vertical-align: top;
+  .submit-button {
+    clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 90%);
+  }
 }
 
 .description-text {
@@ -336,7 +348,7 @@ img {
 /* *************** SIZES ***************** */
 
 .post-title {
-  font-size: 2em;
+  font-size: 2.5em;
   line-height: 1.15em;
 }
 
@@ -353,6 +365,14 @@ img {
 
 .one-space-top {
   margin-top: 1vh;
+}
+
+.one-space-bottom {
+  margin-bottom: 1vh;
+}
+
+.two-space-top {
+  margin-top: 2vh;
 }
 
 .five-space {
@@ -375,7 +395,7 @@ input:-webkit-autofill {
 input[type="submit"] {
   font-weight: 200;
   font-family: $title;
-  letter-spacing: 1px;
+  letter-spacing: .75px;
 }
 
 input[type=checkbox] {
@@ -393,6 +413,10 @@ label {
 
 ::placeholder {
   color: $grey;
+}
+
+.new_email {
+  width: 100%;
 }
 
 .form-container {
@@ -440,8 +464,9 @@ label {
 
 @mixin buttons {
   @include transition;
+  width: 100%;
   display: inline-block;
-  padding: 1vh 1vw;
+  padding: 1.15vh 1vw;
   text-align: center;
   font-size: 1em;
   font-weight: 300;
@@ -449,6 +474,7 @@ label {
   cursor: pointer;
   box-sizing: border-box;
   color: $black;
+  font-family: $title;
   clip-path: polygon(0 0, 100% 10%,100% 90%, 0 100%);
   &:hover {
     background-color: #DDAD15;
@@ -458,10 +484,18 @@ label {
 
 .submit-button {
   @include buttons;
-  width: 100%;
-  font-family: $title;
 }
 
+.facebook-button {
+  @include buttons;
+  background-color: #3b5998;
+}
+
+.twitter-button {
+  @include buttons;
+  background-color: #55acee;
+  clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 90%);
+}
 
 /* ****************** HEADER AND FOOTER ************** */
 
@@ -515,18 +549,94 @@ label {
   color: $grey;
 }
 
+/* ******************** JAVASCRIPTS ************** */
+
+#menu-click {
+  @include transition;
+  cursor: pointer;
+  color: $main;
+  &:hover {
+    color: $dark;
+  }
+}
+
+#close-menu {
+  @include transition;
+  cursor: pointer;
+  color: $black;
+  &:hover {
+    color: $dark;
+  }
+}
+
+#menu-container {
+  display: none;
+}
+
+.side-header {
+  display: none;
+}
+
+.back {
+  display: none;
+}
+
 /* ******************* MEDIA QUERIES *************** */
 
 @media screen and (max-width: 1000px) {
 
+  .no-mobile {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
   .content {
     width: 100%;
-    margin-left: 0;
+    margin: 0;
   }
 
   .sidebar {
     width: 100%;
     margin: 0 0 0 0;
+  }
+
+  .side-header {
+    display: block;
+    position: absolute;
+    text-align: center;
+    z-index: 1003;
+    width: auto;
+    color: $black;
+  }
+
+  #menu-container {
+    display: none;
+    position: absolute;
+    width: 96%;
+    margin: 0 auto;
+    left: 50%;
+    top: 0;
+  }
+
+  .blur {
+    -webkit-filter: blur(4px);
+  }
+
+  .back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $black;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.80;
+    -khtml-opacity: 0.80;
+    opacity: 0.80;
+    z-index: 1002;
   }
 
   @mixin mobile-nav {
@@ -547,12 +657,15 @@ label {
   .side-nav {
     width: 100%;
     padding: 0;
-    margin: 5vh 0 0 0;
+    position: relative;
+    left: -50%;
     ul {
+      padding: 2vh 2vw;
+      margin: 0;
       li {
-        display: inline-block;
-        margin: 0 1vw;
+        display: block;
         padding: 1vh 0;
+        position: relative;
         &:first-child {
           padding: 0 0 1vh 0;
         }
@@ -567,13 +680,17 @@ label {
     width: 100%;
   }
 
+  .second-column {
+    width: 100%;
+    height: auto;
+  }
+
   .thumbnail-image {
     border-radius: 4px 4px 0 0;
   }
 
-  .second-column {
+  .two-column {
     width: 100%;
-    height: auto;
   }
 
   .bottom {

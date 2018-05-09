@@ -1,0 +1,15 @@
+<% if content_for?(:og_header) %>
+  <%= yield(:og_header) %>
+<% else %>
+  <meta property="og:url" content="http://www.fortnitebrguide.com" />
+  <meta property="og:title" content="Fortnite BR Guide" />
+  <meta property="og:description" content="Fortnite Battle Royal Guide. Stay one step ahead of the storm!" />
+  <meta property="og:image" content="https://i.imgur.com/6VvV1L3.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Fortnite BR Guide" />
+  <meta name="twitter:description" content="Fortnite Battle Royal Guide. Stay one step ahead of the storm!" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:url" content="http://www.fortnitebrguide.com" />
+  <meta name="twitter:site" content="@FortniteBRGuide" />
+  <meta name="twitter:creator" content="@FortniteBRGuide">
+<% end %>

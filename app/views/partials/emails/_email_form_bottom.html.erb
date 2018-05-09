@@ -1,0 +1,24 @@
+Stay out of the storm! 
+<div class="tiny-text">(One email per new post, no spam, and it's free!)</div>
+
+<div class="one-space-top">
+  <%= form_for(Email.new, url: emails_path, remote: true) do |f| %>
+    <div class="flex">
+      <span class="email_errors"><%= render 'partials/errors/email_errors' %></span>
+      <div class="two-column">
+        <%= f.email_field :email, placeholder: "Enter your email", class: "text-field-white" %>
+      </div>
+      <div class="two-column">
+        <div class="flex">
+          <div class="two-column">
+            <%= f.check_box :daily %>
+            <%= f.label :daily, "I want daily emails!" %>
+          </div>
+          <div class="two-column">
+            <%= f.submit "SIGN UP!", class: "submit-button" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

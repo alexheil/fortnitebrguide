@@ -1,8 +1,27 @@
-<div class="wrapper clip">
+<div class="no-mobile wrapper clip">
   <div style="background: url(https://i.imgur.com/6VvV1L3.jpg) no-repeat fixed; background-size: 100%;" class="header-image">
     <div class="header-text title">
       <div class="rotate">
         FORTNITE BR GUIDE
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-only">
+  <div class="wrapper">
+    <div class="container">
+      <div class="site-title title center">
+        <%= link_to "FORTNITE BR GUIDE", root_url %>
+      </div>
+      <div id="menu-click" class="one-space-top center title">
+        Menu
+      </div>
+    </div>
+    <img class="one-space-top image-clip" srcset="https://i.imgur.com/6VvV1L3.jpg" width="100%" height="auto">
+    <div class="container">
+      <div class="two-space-top post-title title center">
+        NEWEST POSTS
       </div>
     </div>
   </div>
@@ -32,7 +51,7 @@
               </div>
               <div class="bottom">
                 <div class="padding-vertical padding-horizontal">
-                  <%= link_to "Read More...", category_post_path(post.category.slug, post), class: "submit-button" %>
+                  <%= link_to "READ MORE...", category_post_path(post.category.slug, post), class: "submit-button" %>
                 </div>
               </div>
             </div>

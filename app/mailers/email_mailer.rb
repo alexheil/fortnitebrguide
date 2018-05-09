@@ -14,7 +14,7 @@ class EmailMailer < ApplicationMailer
   def daily_blast(email)
     @email = email
     @post = Post.where(daily: true).first
-    mail(to: @email.email, subject: ' | Fortnite BR Guide')
+    mail(from: "daily@fortnitebrguide.com", to: @email.email, subject: ' | Fortnite BR Guide')
   end
 
 end

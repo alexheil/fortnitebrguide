@@ -1,21 +1,29 @@
-<aside class="no-mobile sidebar">
+<aside id="menu-container" class="side-header mobile-only">
 
-  <div class="side-nav">
-    <div class="margin-fix">
-      <div class="padding-horizontal">
-        <div class="padding-vertical border-bottom post-list-title">
-          <%= link_to "FORTNITE BR GUIDE", root_url, class: "submit-button" %>
-        </div>
+  <div class="side-nav mobile-only">
+    <div class="padding-horizontal">
 
-        <div class="padding-vertical">
-          <span class="email_form"><%= render 'partials/emails/email_form' %></span>
-        </div>
-
+      <div class="padding-vertical title">
+        <div id="close-menu">CLOSE MENU</div>
       </div>
+
     </div>
   </div>
 
-  <div class="side-nav">
+  <div class="side-nav mobile-only">
+    <div class="padding-horizontal">
+      <div class="padding-vertical border-bottom post-list-title">
+        <%= link_to "FORTNITE BR GUIDE", root_url, class: "submit-button" %>
+      </div>
+
+      <div class="padding-vertical">
+        <span class="email_form"><%= render 'partials/emails/email_form' %></span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="side-nav mobile-only">
     <div class="padding-horizontal">
       <div class="padding-vertical border-bottom title post-list-title">
         <%= link_to "RECENT POSTS", posts_path, class: "black-link" %>
@@ -28,7 +36,7 @@
     </ul>
   </div>
 
-  <div class="side-nav">
+  <div class="side-nav mobile-only">
     <div class="padding-horizontal">
       <div class="padding-vertical border-bottom title post-list-title">
         <%= link_to "CATEGORIES", categories_path, class: "black-link" %>
@@ -42,3 +50,5 @@
   </div>
 
 </aside>
+
+<div class="back"></div>

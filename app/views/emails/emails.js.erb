@@ -1,14 +1,14 @@
 <% if @result %>
   $('.email_form').html('<%=  escape_javascript(render :partial => 'partials/emails/email_success') %>');
-  $('#email_errors').fadeOut(300);
+  $('.email_errors').fadeOut(300);
   $('.flash_js').fadeIn(300);
   $('.flash_js').html('<%=  escape_javascript(render :partial => 'partials/flash') %>');
   setTimeout(function() {
     $('.flash_js').fadeOut();
   }, 5000);
 <% else %>
-  $('#email_errors').fadeIn(300);
-  $('#email_errors').html('<%= escape_javascript(render :partial => 'partials/errors/email_errors') %>');
+  $('.email_errors').fadeIn(300);
+  $('.email_errors').html('<%= escape_javascript(render :partial => 'partials/errors/email_errors') %>');
   $('.flash_js').fadeIn(300);
   $('.flash_js').html('<%=  escape_javascript(render :partial => 'partials/flash') %>');
   setTimeout(function() {

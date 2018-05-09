@@ -1,9 +1,25 @@
 <%= provide(:title, sanitize(@post.title)) %>
 
+<%= render 'partials/post_twitter_cards' %>
+
 <% if admin_signed_in? %>
   <%= link_to "Edit Post", edit_category_post_path(@category, @post) %></br>
   <%= link_to "Delete", category_post_path, method: :delete %>
 <% end %>
+
+<div class="mobile-only">
+  <div class="wrapper">
+    <div class="container">
+      <div class="site-title title center">
+        <%= link_to "FORTNITE BR GUIDE", root_url %>
+      </div>
+      <div id="menu-click" class="one-space-top center title">
+        Menu
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="wrapper">
   <div class="container">
@@ -26,6 +42,19 @@
           </div>
 
         </div>
+        
+        <div class="content-container">
+          <%= render 'partials/share_buttons' %>
+        </div>
+
+        <div class="no-mobile content-container">
+          <div class="padding-horizontal padding-vertical">
+
+            <span class="email_form"><%= render 'partials/emails/email_form_bottom' %></span>
+
+          </div>
+        </div>
+
       </main>
 
       <%= render 'partials/sidebar' %>

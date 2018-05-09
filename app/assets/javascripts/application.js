@@ -25,3 +25,29 @@ var flashTimeout = function() {
 
 $(document).ready(flashTimeout);
 $(document).on('turbolinks:load', flashTimeout);
+
+
+var menuToggle = function() {
+
+  $('#menu-click').click(function() {
+    $('#menu-container').fadeIn(300);
+    $('.back').fadeIn(300);
+    $(".wrapper").addClass("blur");
+  });
+
+  $('.back').click(function() {
+    $('#menu-container').fadeOut(300);
+    $('.back').fadeOut(300);
+    $(".wrapper").removeClass("blur");
+  });
+
+  $('#close-menu').click(function() {
+    $('#menu-container').fadeOut(300);
+    $('.back').fadeOut(300);
+    $(".wrapper").removeClass("blur");
+  });
+
+};
+
+$(document).ready(menuToggle);
+$(document).on('turbolinks:load', menuToggle);
