@@ -1,0 +1,18 @@
+<div class="container">
+
+  <p class="post-title center">Now you can stay one step ahead of the storm!</p>
+
+  <img src="https://i.imgur.com/6VvV1L3.jpg" width="100%" height="auto" />
+
+  <p>Now you'll you get an update every time something legendary is posted!</p>
+
+  <% if @email.daily? %>
+    You'll also get updated on the new skins, gliders, harvesting tools, and sweet new dance moves every day.
+  <% end %>
+
+  <%= link_to "Let's go!", root_url, class: "submit-button" %>
+
+</div>
+
+<p class="tiny-text center">Not associated with Epic Games, Inc.</p>
+<p class="tiny-text center"><%= link_to "Unsubscribe", unsubscribe_email_url(@email) %></p>

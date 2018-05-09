@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20180507025601) do
     t.string   "image"
     t.text     "description"
     t.text     "content"
+    t.boolean  "daily"
     t.string   "slug"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

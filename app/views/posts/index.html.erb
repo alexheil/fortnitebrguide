@@ -34,12 +34,19 @@
               </div>
               <div class="bottom">
                 <div class="padding-vertical padding-horizontal">
-                  <%= link_to "See Posts...", category_post_path(post.category, post), class: "submit-button" %>
+                  <%= link_to "Read more...", category_post_path(post.category, post), class: "submit-button" %>
                 </div>
               </div>
             </div>
           </div>
         <% end %>
+
+        <div class="content-container padding-vertical center">
+          <div class="padding-horizontal">
+            <%= paginate @posts %>
+          </div>
+        </div>
+
       </main>
 
       <%= render 'partials/sidebar' %>

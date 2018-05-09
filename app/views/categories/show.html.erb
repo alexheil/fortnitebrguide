@@ -46,6 +46,13 @@
             </div>
           </div>
         <% end %>
+
+        <div class="content-container padding-vertical center">
+          <div class="padding-horizontal">
+            <%= paginate @posts %>
+          </div>
+        </div>
+
       </main>
 
       <%= render 'partials/sidebar' %>

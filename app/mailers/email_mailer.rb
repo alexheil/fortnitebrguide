@@ -7,13 +7,13 @@ class EmailMailer < ApplicationMailer
 
   def email_blast(email)
     @email = email
-    @post = Post.last unless @post.category.title = "Daily"
+    @post = Post.where(daily: false).first
     mail(to: @email.email, subject: ' | Fortnite BR Guide')
   end
 
   def daily_blast(email)
     @email = email
-    @post = Post.last if @post.category.title = "Daily"
+    @post = Post.where(daily: true).first
     mail(to: @email.email, subject: ' | Fortnite BR Guide')
   end
 

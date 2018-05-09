@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   get 'posts' => 'posts#index', :as => 'posts'
   post 'emails' => 'emails#create', :as => 'emails'
 
-  resources :categories, except: [:edit, :index], path: "/1" do
-    resources :posts, path: "/1", except: :index
+  resources :categories, except: [:edit, :index], path: "/" do
+    resources :posts, path: "/", except: :index
   end
 
   resources :emails, except: [:index, :show, :create, :new, :edit, :update, :destroy] do 

@@ -26,7 +26,7 @@ $title: "BurbankBigCondensed-Black", Helvetica Neue, Helvetica, Arial, sans-seri
 
 @font-face {
   font-family: "BurbankBigCondensed-Black";
-  src:url(asset-path('fonts/BurbankBigCondensed-Black.otf'));
+  src: url(asset-path('fonts/BurbankBigCondensed-Black.otf'));
 }
 
 @mixin transition {
@@ -374,7 +374,8 @@ input:-webkit-autofill {
 
 input[type="submit"] {
   font-weight: 200;
-  font-family: $font;
+  font-family: $title;
+  letter-spacing: 1px;
 }
 
 input[type=checkbox] {

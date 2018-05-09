@@ -8,7 +8,6 @@
   </div>
 </div>
 
-
 <div class="wrapper">
   <div class="container">
     <div class="flex">
@@ -18,7 +17,7 @@
           <div class="content-container">
             <div class="one-column">
               <%= link_to(category_post_path(post.category.slug, post)) do %>
-                <img class="thumbnail-image" srcset="<%= post.image %>" width="100%" height="auto" />
+                <img class="thumbnail-image image-clip" srcset="<%= post.image %>" width="100%" height="auto" />
               <% end %>
             </div>
             <div class="second-column">
@@ -39,7 +38,13 @@
             </div>
           </div>
         <% end %>
-        <%= link_to "View All Posts", posts_path %>
+
+        <div class="content-container padding-vertical center">
+          <div class="padding-horizontal">
+            <%= link_to "View All Posts", posts_path %>
+          </div>
+        </div>
+        
       </main>
 
       <%= render 'partials/sidebar' %>

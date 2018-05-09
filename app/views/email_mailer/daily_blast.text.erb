@@ -1,0 +1,14 @@
+<div class="container">
+
+  <p class="post-title center"><%= link_to @post.title, category_post_url(@post.category, @post) %></p>
+
+  <img src="<%= @post.image %>" width="100%" height="auto" />
+
+  <p><%= @post.description %></p>
+
+  <%= link_to "Read more!", category_post_url(@post.category, @post), class: "submit-button" %>
+
+</div>
+
+<p class="tiny-text center">Not associated with Epic Games, Inc.</p>
+<p class="tiny-text center"><%= link_to "Unsubscribe", unsubscribe_email_url(@email) %></p>

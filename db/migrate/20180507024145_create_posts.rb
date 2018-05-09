@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :image
       t.text :description
       t.text :content
+      t.boolean :daily
       t.string :slug
 
       t.timestamps

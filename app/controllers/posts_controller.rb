@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_email, only: [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.page params[:page]
     @categories = Category.all
     @recent_posts = Post.reorder("created_at desc").limit(5)
   end
