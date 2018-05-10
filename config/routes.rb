@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'categories' => 'categories#index', :as => 'categories'
   get 'posts' => 'posts#index', :as => 'posts'
   post 'emails' => 'emails#create', :as => 'emails'
+  post 'categories' => 'categories#create', :as => 'create_categories'
+  post 'posts' => 'posts#create', :as => 'create_posts'
 
   resources :categories, except: [:edit, :index], path: "/" do
     resources :posts, path: "/", except: :index
