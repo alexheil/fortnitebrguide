@@ -42,7 +42,7 @@
           <div class="content-container">
             <div class="one-column">
               <%= link_to(category_path(category)) do %>
-                <img class="thumbnail-image" srcset="<%= category.image %>" width="100%" height="auto" />
+                <img class="thumbnail-image image-clip" srcset="<%= category.image %>" width="100%" height="auto" />
               <% end %>
             </div>
             <div class="second-column">
@@ -70,3 +70,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'partials/mobile_sidebar' %>

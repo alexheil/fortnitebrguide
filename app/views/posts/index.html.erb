@@ -38,12 +38,12 @@
           <div class="content-container">
             <div class="one-column">
               <%= link_to(category_post_path(post.category, post)) do %>
-                <img class="thumbnail-image" srcset="<%= post.image %>" width="100%" height="auto" />
+                <img class="thumbnail-image image-clip" srcset="<%= post.image %>" width="100%" height="auto" />
               <% end %>
             </div>
             <div class="second-column">
               <div class="padding-horizontal">
-                <%= link_to post.title, category_post_path(post.category, post), class: "tiny-text" %>
+                <%= link_to post.category.title, category_path(post.category), class: "tiny-text" %>
               </div>
               <div class="post-list-title padding-horizontal">
                 <%= link_to post.title, category_post_path(post.category, post) %>
@@ -73,3 +73,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'partials/mobile_sidebar' %>

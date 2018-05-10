@@ -3,10 +3,6 @@ Rails.application.routes.draw do
 
   devise_for :admins
 
-  devise_scope :admin do
-    get "sign_out", to: "admins/sessions#destroy"
-  end
-
   get ':id/edit' => 'categories#edit', :as => 'edit_category'
   get 'categories' => 'categories#index', :as => 'categories'
   get 'posts' => 'posts#index', :as => 'posts'
