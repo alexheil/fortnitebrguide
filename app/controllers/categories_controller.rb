@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @category = Category.friendly.find(params[:id])
     @posts = @category.posts.page params[:page]
+    @top_post = @category.posts.last
     @recent_posts = Post.reorder("created_at desc").limit(5)
   end
 

@@ -40,6 +40,31 @@
     <div class="flex">
 
       <main class="content">
+        <div class="content-container">
+          <div class="one-column">
+            <%= link_to(category_post_path(@category, @top_post)) do %>
+              <img class="thumbnail-image" srcset="<%= @top_post.image %>" width="100%" height="auto" />
+            <% end %>
+          </div>
+          <div class="second-column">
+            <div class="padding-horizontal">
+              <%= link_to @top_post.category.title, category_path(@top_post.category), class: "tiny-text" %>
+            </div>
+            <div class="post-list-title padding-horizontal">
+              <%= link_to @top_post.title, category_post_path(@category.slug, @top_post) %>
+            </div>
+            <div class="description-text">
+              <%= @top_post.description %>
+            </div>
+            <div class="bottom">
+              <div class="padding-vertical padding-horizontal">
+                <%= link_to "READ MORE...", category_post_path(@category.slug, @top_post), class: "submit-button" %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <% @posts.each do |post| %>
           <div class="content-container">
             <div class="one-column">
@@ -52,14 +77,14 @@
                 <%= link_to post.category.title, category_path(post.category), class: "tiny-text" %>
               </div>
               <div class="post-list-title padding-horizontal">
-                <%= link_to post.title, category_post_path(post.category.slug, post) %>
+                <%= link_to post.title, category_post_path(@category, post) %>
               </div>
               <div class="description-text">
                 <%= post.description %>
               </div>
               <div class="bottom">
                 <div class="padding-vertical padding-horizontal">
-                  <%= link_to "READ MORE...", category_post_path(post.category.slug, post), class: "submit-button" %>
+                  <%= link_to "READ MORE...", category_post_path(@category, post), class: "submit-button" %>
                 </div>
               </div>
             </div>
