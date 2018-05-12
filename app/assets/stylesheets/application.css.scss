@@ -358,14 +358,18 @@ img {
   }
   img {
     border-radius: 4px;
-    -webkit-transition: .3s ease-in-out;
-    -moz-transition: .3s ease-in-out;
-    -o-transition: .3s ease-in-out;
-    &:hover {
+  }
+  a {
+    img {
       -webkit-transition: .3s ease-in-out;
       -moz-transition: .3s ease-in-out;
       -o-transition: .3s ease-in-out;
-      opacity: .75;
+      &:hover {
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
+        opacity: .75;
+      }
     }
   }
 }
